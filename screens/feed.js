@@ -5,7 +5,7 @@ import NoteFeed from "../components/NoteFeed";
 
 const Feed = props => {
     return (
-        <NoteFeed />
+        <NoteFeed navigation={props.navigation} />
     );
 }
 
