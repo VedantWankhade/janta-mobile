@@ -1,12 +1,11 @@
 import React from "react";
 import { Text, View, Button } from 'react-native';
 
+import NoteFeed from "../components/NoteFeed";
+
 const Feed = props => {
     return (
-        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-            <Text>Note Feed</Text>
-            <Button title='Keep reading' onPress={() => props.navigation.navigate('Note')} />
-        </View>
+        <NoteFeed />
     );
 }
 
