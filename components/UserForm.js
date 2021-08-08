@@ -31,8 +31,18 @@ const ButtonText = styled.Text`
   font-size: 18px;
 `;
 
+const SignUp = styled.TouchableOpacity`
+  margin-top: 20px;
+`;
+
+const Link = styled.Text`
+  color: #0077cc;
+  font-weight: bold;
+`;
+
 const UserForm = props => {
     const [email, setEmail] = useState();
+    const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
     const handleSubmit = () => {
@@ -40,6 +50,7 @@ const UserForm = props => {
         props.action({
             variables: {
                 email,
+                username,
                 password
             }
         })
@@ -49,11 +60,22 @@ const UserForm = props => {
         <FormView>
             <FormLabel>Email</FormLabel>
             <StyledInput onChangeText={text => setEmail(text)} value={email} textContentType="emailAddress" autoCompleteType="email" autoFocus={true} autoCapitalize="none" />
+            {props.formType === 'signUp' && (
+                <View>
+                    <FormLabel>Username</FormLabel>
+                    <StyledInput onChangeText={text => setUsername(text)} value={username} textContentType="username" autoCapitalize="none" />
+                </View>
+            )}
             <FormLabel>Password</FormLabel>
             <StyledInput onChangeText={text => setPassword(text)} value={password} textContentType="password" secureTextEntry={true} />
             <FormButton onPress={handleSubmit}>
                 <ButtonText>Sign In</ButtonText>
             </FormButton>
+            {props.formType !== 'signUp' && (
+                <SignUp onPress={() => props.navigation.navigate('SignUp')}>
+                    <Text>Need and account? <Link>Sign Up</Link></Text>
+                </SignUp>
+            )}
         </FormView>
     )
 }
