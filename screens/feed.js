@@ -3,6 +3,7 @@ import { Text, View, Button } from 'react-native';
 import { useQuery, gql } from "@apollo/client";
 
 import NoteFeed from "../components/NoteFeed";
+import Loading from '../components/Loading';
 
 const GET_NOTES = gql`
     query notes {
@@ -23,7 +24,7 @@ const GET_NOTES = gql`
 const Feed = props => {
     const { loading, error, data } = useQuery(GET_NOTES);
 
-    if (loading) return <Text>Loading...</Text>;
+    if (loading) return <Loading />;
     if (error) return <Text>Error occured...</Text>
 
     return (
