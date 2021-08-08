@@ -19,7 +19,8 @@ const SignIn = props => {
 
     const [signIn, { loading, error }] = useMutation(SIGNIN_USER, {
         onCompleted: data => {
-            storeToken(data.signIn)
+            console.log(data)
+            storeToken(data)
         }
     })
 
