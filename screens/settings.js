@@ -1,12 +1,21 @@
 import React from 'react';
 import { View, Button } from 'react-native';
 import * as ExpoSecureStore from "expo-secure-store";
+import styled from "styled-components";
+
+const SignOutButton = styled.View`
+  margin-top: auto;
+  margin-bottom: auto;
+`;
 
 const Settings = props => {
+    const signOut = () => {
+        ExpoSecureStore.deleteItemAsync('token').then(props.navigation.navigate('Auth'))
+    }
     return (
-        <View>
-            <Button title={'Sign Out'} />
-        </View>
+        <SignOutButton>
+            <Button title={'Sign Out'} onPress={signOut} />
+        </SignOutButton>
     );
 }
 

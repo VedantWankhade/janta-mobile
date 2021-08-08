@@ -11,7 +11,8 @@ if (Constants.manifest.debuggerHost) {
 const ENV = {
   dev: {
     // API_URI: `http://${localhost}:4000/api`  this is the proper method but it's not working
-    API_URI: `https://f2c9814e617b.ngrok.io/api`  // temporary solution | using ngrock to expose localhost 4000 port
+    // dont forget to use ngrok and change tehe below url each time
+    API_URI: `https://4eb1804798ca.ngrok.io/api`  // temporary solution | using ngrock to expose localhost 4000 port
   },
   prod: {
     // update the API_URI value with your publicly deployed API address

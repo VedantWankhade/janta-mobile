@@ -64,7 +64,7 @@ const TabNavigator = createBottomTabNavigator({
         screen: Settings,
         navigationOptions: {
             tabBarLabel: 'Settings',
-            tabBarIcon: ({tintColor}) => (<MaterialCommunityIcons name={"settings"} size={24} color={tintColor} />)
+            tabBarIcon: ({tintColor}) => (<MaterialCommunityIcons name="account-settings" size={24} color={tintColor} />)
         }
     }
 });
