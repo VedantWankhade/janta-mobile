@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Button } from 'react-native';
 import * as ExpoSecureStore from "expo-secure-store";
-import styled from "styled-components";
+import styled from "styled-components/native";
 
 const SignOutButton = styled.View`
   margin-top: auto;
