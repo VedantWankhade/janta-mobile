@@ -37,6 +37,12 @@ const UserForm = props => {
 
     const handleSubmit = () => {
         // sign in user
+        props.action({
+            variables: {
+                email,
+                password
+            }
+        })
     }
 
     return (
