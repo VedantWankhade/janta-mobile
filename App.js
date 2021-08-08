@@ -8,13 +8,13 @@ const { API_URI } = getEnvVars();
 const uri = API_URI;
 const cache = new InMemoryCache();
 
-console.log(API_URI)
+console.log("Connecting to server api...")
 // configure apollo client
 const client = new ApolloClient({
     uri,
     cache
 })
-console.log(uri)
+console.log("Connected to api", uri)
 
 const Main = () => {
     return (
