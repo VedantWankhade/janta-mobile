@@ -15,7 +15,7 @@ const ENV = {
   },
   prod: {
     // update the API_URI value with your publicly deployed API address
-    API_URI: 'https://<PUBLIC-API-URI>'
+    API_URI: 'https://janta-api.herokuapp.com/api'
   }
 };
 
